@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: .
+    container_name: discord-music-bot
+    restart: unless-stopped
+    env_file: .env
+    network_mode: host
+    volumes:
+      - yt_cache:/tmp/yt-dlp-cache
+
+volumes:
+  yt_cache:
